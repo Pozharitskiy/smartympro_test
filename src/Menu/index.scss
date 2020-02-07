@@ -1,21 +1,36 @@
 @import "../variables.scss";
 
-.menu_header{
+.menu {
+  height: 100vh;
+  background: $menu-color;
+}
+
+.menu_header {
   display: flex;
   justify-content: space-evenly;
-  width:240px;
-  height:100px;
-  background:$menu-name-color;
-  &__logo{
+  width: 240px;
+  height: 100px;
+  background: $menu-name-color;
+  &__logo {
     height: fit-content;
     align-self: center;
   }
-  &__name{
+  &__name {
     font-size: 18px;
-    color:$white;
+    color: $white;
     align-self: center;
   }
-  &__list{
-    
+  &__list {
+    padding-inline-start: 0;
   }
+  &__list__item {
+    display: flex;
+    text-transform: uppercase;
+    color: $white;
+  }
+}
+.list_item__logo {
+  align-self: center;
+  margin-left: 30px;
+  padding-right: 20px;
 }
