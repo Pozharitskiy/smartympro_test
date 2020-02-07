@@ -16,40 +16,48 @@ const Menu = () => {
   return (
     <div className="menu">
       <div className="menu_header">
-        <img className="menu_header__logo" src={Logo} />
+        <img className="menu_header__logo" alt="logo" src={Logo} />
         <h1 className="menu_header__name">Open Circles</h1>
       </div>
       <ul className="menu_header__list">
         <li className="menu_header__list__item">
-          <img src={UsersLogo} className="list_item__logo" />
+          <img src={UsersLogo} alt="users list" className="list_item__logo" />
           <p>users list</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={DailyLogo} className="list_item__logo" />
+          <img src={DailyLogo} alt="daily" className="list_item__logo" />
           <p>daily</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={BrainstormLogo} className="list_item__logo" />
+          <img
+            src={BrainstormLogo}
+            alt="brainstorm"
+            className="list_item__logo"
+          />
           <p>brainstorm</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={CourseLogo} className="list_item__logo" />
+          <img src={CourseLogo} alt="courses" className="list_item__logo" />
           <p>course</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={LevelingLogo} className="list_item__logo" />
+          <img src={LevelingLogo} alt="leveling" className="list_item__logo" />
           <p>leveling system</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={StreamsLogo} className="list_item__logo" />
+          <img src={StreamsLogo} alt="streams" className="list_item__logo" />
           <p>live streams</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={CashLogo} className="list_item__logo" />
+          <img src={CashLogo} alt="advanced" className="list_item__logo" />
           <p>advanced</p>
         </li>
         <li className="menu_header__list__item">
-          <img src={AnalyticsLogo} className="list_item__logo" />
+          <img
+            src={AnalyticsLogo}
+            alt="analytics"
+            className="list_item__logo"
+          />
           <p>video analytics</p>
         </li>
       </ul>
