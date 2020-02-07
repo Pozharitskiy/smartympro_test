@@ -5,12 +5,14 @@ const User = user => {
   console.log(user);
   return (
     <tr>
-      <td>{customer.email}</td>
-      <td>{customer.name}</td>
-      <td>{customer.type}</td>
-      <td>{customer.company}</td>
-      <td>{customer.country}</td>
-      <td>{customer.subscription}</td>
+      <td className="users_table__cell email">{customer.email}</td>
+      <td className="users_table__cell name">{customer.name}</td>
+      <td className="users_table__cell type">{customer.type}</td>
+      <td className="users_table__cell company">{customer.company}</td>
+      <td className="users_table__cell country">{customer.country}</td>
+      <td className="users_table__cell subscription">
+        {customer.subscription}
+      </td>
     </tr>
   );
 };
