@@ -1,0 +1,21 @@
+@import "../variables.scss";
+
+.menu_header{
+  display: flex;
+  justify-content: space-evenly;
+  width:240px;
+  height:100px;
+  background:$menu-name-color;
+  &__logo{
+    height: fit-content;
+    align-self: center;
+  }
+  &__name{
+    font-size: 18px;
+    color:$white;
+    align-self: center;
+  }
+  &__list{
+    
+  }
+}
