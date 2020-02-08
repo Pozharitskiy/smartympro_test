@@ -63,6 +63,10 @@
   font-weight: 600;
 }
 
+.header_text {
+  color: $header-color !important;
+}
+
 .burger_icon {
   @include burger(25px, 3px, 5px, #444);
 }
