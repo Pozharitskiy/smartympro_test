@@ -2,22 +2,28 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-import { setUser } from "../../actions/user";
+import { setUser } from "../../actions/users";
 import "./index.scss";
 
-const OpenUserPopup = ({ user, setUser }) => {
-  const [firstName, setFirstName] = useState(user.name[0]);
-  const [lastName, setLastName] = useState(user.name[1]);
+const OpenUserPopup = ({ user, setUser, index }) => {
+  const [firstName, setFirstName] = useState(user.name.split(" ")[0]);
+  const [lastName, setLastName] = useState(user.name.split(" ")[1]);
   const [email, setEmail] = useState(user.email);
   const [country, setCountry] = useState(user.country);
   const [company, setCompany] = useState(user.company);
+  const type = [user.type];
+  if (type[0] === "Business") {
+    type.push("Private");
+  } else {
+    type.push("Business");
+  }
 
   return (
     <div className="user_popup__container">
       <div className="popup_controls">
         <div className="popup_header">
           <p className="popup_header__username">
-            edit {firstName + " " + lastName}
+            edit {user.name.split(" ")[0] + " " + user.name.split(" ")[1]}
           </p>
           <p className="popup_header__id">unique ID - {user.id}</p>
         </div>
@@ -77,8 +83,8 @@ const OpenUserPopup = ({ user, setUser }) => {
         <form className="popup_form">
           <label className="popup_label">Type</label>
           <select>
-            <option defaultValue="type">{user.type[0]}</option>
-            <option defaultValue="type">{user.type[1]}</option>
+            <option defaultValue="type">{type[0]}</option>
+            <option defaultValue="type">{type[1]}</option>
           </select>
         </form>
 
@@ -108,7 +114,7 @@ const OpenUserPopup = ({ user, setUser }) => {
         <button>Revoke Access</button>
         <button
           onClick={() => {
-            setUser({ firstName, lastName, email, country, company });
+            setUser({ firstName, lastName, email, country, company }, index);
           }}
         >
           Save
@@ -118,8 +124,12 @@ const OpenUserPopup = ({ user, setUser }) => {
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  setUser: user => dispatch(setUser(user))
+const mapStateToProps = state => ({
+  users: state.users
 });
 
-export default connect(null, mapDispatchToProps)(OpenUserPopup);
+const mapDispatchToProps = dispatch => ({
+  setUser: (user, index) => dispatch(setUser(user, index))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(OpenUserPopup);

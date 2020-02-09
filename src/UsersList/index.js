@@ -1,11 +1,11 @@
 import React from "react";
+import { connect } from "react-redux";
 
-import users from "../mock/users";
 import User from "./User";
 
 import "./index.scss";
 
-const UsersList = () => {
+const UsersList = ({ users }) => {
   return (
     <div className="users_list__container">
       <table className="users_table">
@@ -29,12 +29,17 @@ const UsersList = () => {
             <p className="header_text customer_subscription">Subscription</p>
           </td>
         </tr>
-        {users.map(el => {
-          return <User user={el} />;
-        })}
+        {users &&
+          users.map((user, index) => (
+            <User user={user} key={user.id} index={index} />
+          ))}
       </table>
     </div>
   );
 };
 
-export default UsersList;
+const mapStateToProps = state => ({
+  users: state.users.usersList
+});
+
+export default connect(mapStateToProps)(UsersList);

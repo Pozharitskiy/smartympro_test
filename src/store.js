@@ -1,5 +1,5 @@
 import { createStore } from "redux";
 
-import user from "./reducers";
+import users from "./reducers";
 
-export default createStore(user);
+export default createStore(users);

@@ -4,14 +4,13 @@ import Popup from "reactjs-popup";
 
 import "./index.scss";
 
-const User = user => {
-  const customer = Object.assign(user.user, {});
-  customer.name = customer.name.split(" ");
-  customer.type = [customer.type];
-  if (customer.type[0] === "Business") {
-    customer.type.push("Private");
+const User = ({ user, index }) => {
+  const name = user.name.split(" ");
+  const type = [user.type];
+  if (type[0] === "Business") {
+    type.push("Private");
   } else {
-    customer.type.push("Business");
+    type.push("Business");
   }
 
   return (
@@ -20,30 +19,30 @@ const User = user => {
         trigger={
           <tr>
             <td className="users_table__cell">
-              <p className="customer_email">{customer.email}</p>
+              <p className="customer_email">{user.email}</p>
             </td>
             <td className="users_table__cell">
               <p className="customer_name">
-                <b>{customer.name[0]}</b> {customer.name[1]}
+                <b>{name[0]}</b> {name[1]}
               </p>
             </td>
             <td className="users_table__cell">
-              <p className="customer_type">{customer.type[0]}</p>
+              <p className="customer_type">{type[0]}</p>
             </td>
 
             <td className="users_table__cell">
-              <p className="customer_company">{customer.company}</p>
+              <p className="customer_company">{user.company}</p>
             </td>
             <td className="users_table__cell">
-              <p className="customer_country">{customer.country}</p>
+              <p className="customer_country">{user.country}</p>
             </td>
             <td className="users_table__cell">
-              <p className="customer_subscription">{customer.subscription}</p>
+              <p className="customer_subscription">{user.subscription}</p>
             </td>
           </tr>
         }
       >
-        <OpenUserPopup user={customer} />
+        <OpenUserPopup user={user} index={index} />
       </Popup>
     </>
   );
