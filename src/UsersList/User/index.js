@@ -5,8 +5,14 @@ import Popup from "reactjs-popup";
 import "./index.scss";
 
 const User = user => {
-  const customer = user.user;
-  const customerName = customer.name.split(" ");
+  const customer = Object.assign(user.user, {});
+  customer.name = customer.name.split(" ");
+  customer.type = [customer.type];
+  if (customer.type[0] === "Business") {
+    customer.type.push("Private");
+  } else {
+    customer.type.push("Business");
+  }
 
   return (
     <>
@@ -18,11 +24,11 @@ const User = user => {
             </td>
             <td className="users_table__cell">
               <p className="customer_name">
-                <b>{customerName[0]}</b> {customerName[1]}
+                <b>{customer.name[0]}</b> {customer.name[1]}
               </p>
             </td>
             <td className="users_table__cell">
-              <p className="customer_type">{customer.type}</p>
+              <p className="customer_type">{customer.type[0]}</p>
             </td>
 
             <td className="users_table__cell">
