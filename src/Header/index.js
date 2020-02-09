@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./index.scss";
 
-const Header = users => {
+const Header = ({ users }) => {
   const [isBurgerToggled, toggleBurgerClass] = useState("menu-button");
-  const consumers = users.users;
   const toggleBurger = () => {
     if (isBurgerToggled === "menu-button") {
       toggleBurgerClass("is_active");
@@ -20,7 +19,7 @@ const Header = users => {
         </div>
         <div className="users_list">
           <h2 className="users_list__header">Users list</h2>
-          <p className="users_list__count">{consumers.length} users</p>
+          <p className="users_list__count">{users.length} users</p>
         </div>
       </div>
       <div className="central_block">

@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+
+import { setUser } from "./actions/user";
 
 import Menu from "./Menu";
 import Header from "./Header";
@@ -7,7 +10,10 @@ import users from "./mock/users";
 
 import "./App.scss";
 
-function App() {
+const App = ({ setUser }) => {
+  useEffect(() => {
+    setUser(users);
+  }, [setUser]);
   return (
     <div className="App">
       <Menu />
@@ -17,6 +23,10 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setUser: user => dispatch(setUser(user))
+});
+
+export default connect(null, mapDispatchToProps)(App);

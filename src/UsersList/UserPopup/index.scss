@@ -1,0 +1,65 @@
+@import "../../variables.scss";
+
+.user_popup__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.e-mail_line,
+.country_line,
+.type_line,
+.buttons_line {
+  display: flex;
+  flex-direction: row;
+}
+
+.popup-content {
+  width: 90vw !important;
+  top: 0 !important;
+  left: 0 !important;
+  padding: 0 !important;
+  background: $popup-background-color !important;
+}
+
+.popup_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup_controls {
+  display: flex;
+  background: $white;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  width: 100%;
+  border-bottom: 1px solid $main-color-border;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.5);
+}
+
+.popup_close {
+  cursor: pointer;
+  font-size: 20px;
+  margin-right: 30px;
+  color: $main-font-color;
+}
+
+.popup_header {
+  height: fit-content;
+  margin-left: 30px;
+  &__username {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: $header-color;
+    margin: 0;
+  }
+  &__id {
+    font-weight: 500;
+    font-size: 13px;
+    text-align: left;
+    margin: 0;
+  }
+}
+.popup_label {
+  font-weight: 500;
+}

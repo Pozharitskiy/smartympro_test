@@ -11,22 +11,22 @@ const UsersList = () => {
       <table className="users_table">
         <tr className="users_table__header-row">
           <td className="users_table__header-cell">
-            <p className="customer_email">E-mail</p>
+            <p className="header_text customer_email">E-mail</p>
           </td>
           <td className="users_table__header-cell">
-            <p className="customer_name">Name</p>
+            <p className="header_text customer_name">Name</p>
           </td>
           <td className="users_table__header-cell">
-            <p className="customer_type">Type</p>
+            <p className="header_text customer_type">Type</p>
           </td>
           <td className="users_table__header-cell">
-            <p className="customer_company">Company</p>
+            <p className="header_text customer_company">Company</p>
           </td>
           <td className="users_table__header-cell">
-            <p className="customer_country">Country</p>
+            <p className="header_text customer_country">Country</p>
           </td>
           <td className="users_table__header-cell">
-            <p className="customer_subscription">Subscription</p>
+            <p className="header_text customer_subscription">Subscription</p>
           </td>
         </tr>
         {users.map(el => {
