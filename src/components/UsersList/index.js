@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import User from "./User";
+import User from "../User";
 
 import "./index.scss";
 
@@ -34,6 +34,7 @@ const UsersList = ({ users }) => {
             <User user={user} key={user.id} index={index} />
           ))}
       </table>
+      <button className="show_more__button">Show more</button>
     </div>
   );
 };

@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 import { setUsersList } from "./actions/users";
 
-import Menu from "./Menu";
-import Header from "./Header";
-import UsersList from "./UsersList";
+import Menu from "./components/Menu";
+import Header from "./components/Header";
+import UsersList from "./components/UsersList";
 import users from "./mock/users";
 
 import "./App.scss";

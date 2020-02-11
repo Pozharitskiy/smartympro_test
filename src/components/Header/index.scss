@@ -1,5 +1,5 @@
 @import "../variables.scss";
-@import "../../node_modules/sass-burger/burger";
+@import "../../../node_modules/sass-burger/burger";
 
 .header_container {
   height: 100px;
@@ -31,7 +31,7 @@
 .header_search {
   width: 280px;
   height: 40px;
-  background: url("../img/search.png");
+  background: url("../../img/search.png");
   background-repeat: no-repeat;
   background-color: rgba(218, 171, 19, 0.5);
   background-position: 5%;
@@ -45,7 +45,9 @@
   display: inline-block;
   padding: 0.5em;
 }
-
+.menu_header__name {
+  margin: 0 20px 0 0;
+}
 .header_btn {
   width: 120px;
   height: 40px;
