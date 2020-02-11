@@ -1,18 +1,12 @@
 import React from "react";
+
 import OpenUserPopup from "../UserPopup/index.js";
 import Popup from "reactjs-popup";
 
 import "./index.scss";
 
 const User = ({ user, index }) => {
-  const name = user.name.split(" ");
-  const type = [user.type];
-  if (type[0] === "Business") {
-    type.push("Private");
-  } else {
-    type.push("Business");
-  }
-
+  const name = user.name;
   return (
     <>
       <Popup
@@ -27,7 +21,7 @@ const User = ({ user, index }) => {
               </p>
             </td>
             <td className="users_table__cell">
-              <p className="customer_type">{type[0]}</p>
+              <p className="customer_type">{user.type[0]}</p>
             </td>
 
             <td className="users_table__cell">
@@ -42,7 +36,7 @@ const User = ({ user, index }) => {
           </tr>
         }
       >
-        <OpenUserPopup user={user} index={index} />
+        {close => <OpenUserPopup user={user} index={index} close={close} />}
       </Popup>
     </>
   );

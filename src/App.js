@@ -9,6 +9,7 @@ import UsersList from "./UsersList";
 import users from "./mock/users";
 
 import "./App.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = ({ setUsersList }) => {
   useEffect(() => {
