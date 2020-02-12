@@ -1,0 +1,57 @@
+@import "../variables.scss";
+
+.users_list__container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: $popup-background-color;
+  border-collapse: collapse;
+}
+.users_list__count {
+  font-weight: 600;
+  margin-left: 5px;
+}
+.burger_menu {
+  cursor: pointer;
+}
+.users_table {
+  width: 95%;
+  margin-top: 20px;
+  background: $white;
+  margin-left: 20px;
+  border-radius: 5px;
+
+  &__header-row {
+    color: $header-color;
+    font-weight: 600;
+    text-align: left;
+    height: 40px;
+  }
+  &__header-cell {
+    color: $header-color;
+  }
+  &__cell {
+    height: 80px;
+    text-align: left;
+  }
+}
+
+.users_table,
+.users_table__header-row,
+.users_table__header-cell,
+.users_table__cell {
+  border-collapse: collapse;
+  border: 1px solid $main-color-border;
+}
+
+.show_more__button {
+  width: 95%;
+  height: 50px;
+  margin: 20px;
+  color: $header-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: $white;
+  border-radius: 5px;
+  border: 1px solid $main-color-border;
+}

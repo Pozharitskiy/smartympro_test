@@ -1,14 +1,14 @@
 import React from "react";
 
-import Logo from "../img/logo.png";
-import UsersLogo from "../img/users.png";
-import StreamsLogo from "../img/streams.png";
-import BrainstormLogo from "../img/brain.png";
-import DailyLogo from "../img/daily.png";
-import LevelingLogo from "../img/leveling.png";
-import CourseLogo from "../img/course.png";
-import CashLogo from "../img/cash.png";
-import AnalyticsLogo from "../img/analytics.png";
+import Logo from "../../img/logo.png";
+import UsersLogo from "../../img/users.png";
+import StreamsLogo from "../../img/streams.png";
+import BrainstormLogo from "../../img/brain.png";
+import DailyLogo from "../../img/daily.png";
+import LevelingLogo from "../../img/leveling.png";
+import CourseLogo from "../../img/course.png";
+import CashLogo from "../../img/cash.png";
+import AnalyticsLogo from "../../img/analytics.png";
 
 import "./index.scss";
 
@@ -20,7 +20,7 @@ const Menu = () => {
         <h1 className="menu_header__name">Open Circles</h1>
       </div>
       <ul className="menu_header__list">
-        <li className="menu_header__list__item">
+        <li className="menu_header__list__item menu_header__list__item__active">
           <img src={UsersLogo} alt="users list" className="list_item__logo" />
           <p>users list</p>
         </li>

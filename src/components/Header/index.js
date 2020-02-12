@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.scss";
 
-const Header = () => {
+const Header = ({ users }) => {
   const [isBurgerToggled, toggleBurgerClass] = useState("menu-button");
   const toggleBurger = () => {
     if (isBurgerToggled === "menu-button") {
@@ -19,7 +19,7 @@ const Header = () => {
         </div>
         <div className="users_list">
           <h2 className="users_list__header">Users list</h2>
-          <p className="users_list__count">874 users</p>
+          <p className="users_list__count">{users.length} users</p>
         </div>
       </div>
       <div className="central_block">
